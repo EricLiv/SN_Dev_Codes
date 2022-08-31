@@ -1,0 +1,18 @@
+HOW TO CHECK IF A USER IS A MEMBER OF A GROUP AND SET ASSIGNMENT FIELDS IF TRUE
+
+// Create a business rule to check if user is a memeber of a group
+g_scratchpad.membership = gs.getUser().isMemberOf('Service Desk');
+
+// Create an onLoad client script 
+function onLoad() {
+
+    if (g_form.isNewRecord()) {
+        if (g_scratchpad.membership) {
+            g_form.setValue('assignment_group', 'sys id of ServiceDesk group');
+            g_form.setValue('assigned_to', g_user.userID);
+        }
+    }
+
+}
+
+////////////////////////////////////////////////
