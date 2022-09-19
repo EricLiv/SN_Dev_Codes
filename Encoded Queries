@@ -20,4 +20,13 @@ while(myObj.next()){
   // Logic you want to execute for the GlideRecord records
 }
 
+EXAMPLE SCRIPT:
+
+var myObj = new GlideRecord("x_snc_needit_needit");
+myObj.addEncodedQuery("u_when_neededBETWEENjavascript:gs.daysAgoStart(0)@javascript:gs.quartersAgoEnd(1)^active=true^state=14^ORstate=16");
+  myObj.query();
+  while(myObj.next()){
+    // Insert logic you want to execute for the GlideRecord records
+  }
+
 /////////////////////////////////////////////////////////////////////////////////////////
