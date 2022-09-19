@@ -1,3 +1,14 @@
+In the main ServiceNow browser window, use the All menu to open the list for the table of interest. 
+If there is no module to open the list, type <table_name>.list in the Filter field.
+
+Use the Filter to build the query condition.
+
+Click the Run button to execute the query. Right-click the breadcrumbs and select the Copy query menu item. 
+Where you click in the breadcrumbs matters. The copied query includes the condition you right-clicked on and all 
+conditions to the left. To copy the entire query, right-click the condition farthest to the right.
+
+
+
 If there are multiple conditions in query, the conditions are ANDed. 
 To use ORs or create technically complex queries, use encoded queries.
 The code for using an encoded query looks like this:
