@@ -6,7 +6,7 @@ Use the Filter to build the query condition.
 Click the Run button to execute the query. Right-click the breadcrumbs and select the Copy query menu item. 
 Where you click in the breadcrumbs matters. The copied query includes the condition you right-clicked on and all 
 conditions to the left. To copy the entire query, right-click the condition farthest to the right.
-
+Return to the script and paste the encoded query into the addEncodedQuery() method. Be sure to enclose the encoded query in "" or ''.
 
 
 If there are multiple conditions in query, the conditions are ANDed. 
