@@ -1,0 +1,12 @@
+If there are multiple conditions in query, the conditions are ANDed. 
+To use ORs or create technically complex queries, use encoded queries.
+The code for using an encoded query looks like this:
+
+var myObj = new GlideRecord("x_snc_needit_needit");
+myObj.addEncodedQuery('<your_encoded_query>');
+myObj.query();
+while(myObj.next()){
+  // Logic you want to execute for the GlideRecord records
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
