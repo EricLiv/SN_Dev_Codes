@@ -12,3 +12,5 @@ gs.info("Returned number of rows = " +recs);
 var myObj = new GlideRecord('x_snc_needit_needit');
 myObj.query();
 gs.info("Returned record count = " + myObj.getRowCount());
+
+////////////////////////////////////////////////////////////////////
