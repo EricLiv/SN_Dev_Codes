@@ -1,0 +1,19 @@
+// Create a Business Rule to not allow Incidents to be resolved if Incident tasks are open
+
+Table = incident, Advanced = checked, When = before, Update = checked, Filter Condition = State Changes to Resolved
+
+(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+    var grIncTsk = new GlideRecord('incident_task'); // target incident tasks
+    grIncTsk.addQuery('incident', current.sys_id); // on current incident
+    grIncTsk.addQuery('active', true); // if tasks are still active
+    grIncTsk.query();
+    if (grIncTsk.next()) {
+        gs.addErrorMessage("Incidents cannot be resolved until ALL incident tasks are closed or resolved!"); // print message
+            //current.state = previous.state; // reset state change
+            current.incident_state = previous.incident_state; // reset state change
+            current.setAbortAction(true); // cancel change
+    }
+
+})(current, previous);
