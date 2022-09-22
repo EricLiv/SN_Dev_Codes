@@ -1,0 +1,58 @@
+ 1. g_scratchpad using display Business rule
+
+I want to check the logged in user group and if he is a member of group. I want to show certain fields on incident form. So I write a display BR on Incident table
+
+SCRIPT:
+
+(function executeRule(current, previous /*null when async*/) {
+
+g_scratchpad.grp = gs.getUser().isMemberOf('d625dccec0a8016700a222a0f7900d06'); // Pass the sysid of ABC group
+
+})(current, previous);
+
+ 
+
+Client script on Incident table
+
+function onLoad() {
+
+if(g_scratchpad.grp) {
+g_form.setDisplay('category',true); // if he is part of group make category field visible
+}
+else
+{
+g_form.setDisplay('category',false); // if he is not part of group hide category field
+}
+}
+
+ 
+
+example 2. workflow scratchpad variable. We can use this scratchpad to pass values within the workflow
+
+I have a routing table , based on this table I want to set the assignment group for task
+
+run script 
+
+//find Routing for Task assignment group
+
+var req_group = '';
+var gr = new GlideRecord("routingtablename");
+gr.addQuery('u_catalog_item', '4bb2739a4f865700c2c3ab99f110c7f7'); //Item sysid
+gr.addQuery("u_country", current.variables.caller.u_country);// I want callers country
+gr.query();
+if (gr.next()) {
+req_group = gr.u_task_1; // assign the group
+}
+
+workflow.scratchpad.assignment_group = req_group; // I will hold this value in scratchpad to pass it to any activity within the workflow
+
+so when I create a task in workflow I can use the above scratchpad variable to set the assignment group on task
+
+Run script to create task
+
+//Insert task 
+var task = new GlideRecord("sc_task");
+task.initialize();
+task.parent = current.sys_id;
+task.assignment_group = workflow.scratchpad.assignment_group; //Here I can pass the scratchpad value to assignment group
+var sysID = task.insert();
