@@ -1,0 +1,4 @@
+// Check if user has role
+
+g_user.hasRole('itil');
+g_user.hasRoleExactly('itil');
