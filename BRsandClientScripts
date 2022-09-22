@@ -16,3 +16,20 @@ function onLoad() {
 }
 
 ////////////////////////////////////////////////
+
+
+ Display Business Rule:
+
+g_scratchpad.css = gs.getProperty('css.base.color');
+g_scratchpad.hasAttachments = current.hasAttachments();
+g_scratchpad.managerName = current.caller_id.manager.getDisplayValue();
+
+ Assess using Client Script:
+
+// Check if the form has attachments
+if (g_scratchpad.hasAttachments)
+    // do something interesting here
+else
+    alert('You need to attach a form signed by ' + g_scratchpad.managerName);
+    
+///////////////////////////////////////////////////////
