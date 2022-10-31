@@ -1,7 +1,23 @@
 Links to resources
 
+Capture Variable Changes in Activities:
+https://servicenowscholar.com/2019/07/30/add-activity-log-to-a-form/#:~:text=First%2C%20navigate%20to%20System%20UI,the%20Activities%20(filtered)%20record.
+
+https://www.servicenow.com/community/training-and-certifications/showing-changes-to-variables-in-sc-items-in-the-activity/m-p/296553
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Scripting - User Objects:
 https://servicenowguru.com/scripting/user-object-cheat-sheet/
 
+/////////////////////////////////////////////////////////////////////////
+
+Client Script scripting:
 https://servicenowguru.com/scripting/client-scripts-scripting/gform-getreference-callback/
 
-Unable to assign user to caller field: https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Unable to assign user to caller field: 
+https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
