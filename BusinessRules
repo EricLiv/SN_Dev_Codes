@@ -82,4 +82,26 @@ function getValues(q_value,q_sid){
 
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Add SCTASK Assigned_to to RITM Watch List
+
+ Business Rule:
+Table: Catalog Task [sc_task]
+Active and Advanced
+After, Insert and Update
+Conditions: Assigned_to changes, and Assigned_to is not empty
+Advance - Script:
+(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+
+    var ritm = current.request_item.getRefRecord();
+    var wlArr = ritm.watch_list.toString().split(',');
+    var idx = wlArr.indexOf(previous.assigned_to.toString()); //get index of sys_id of user you want to remove from watch list
+    wlArr.splice(idx, 1); //Remove the specific user from array. idx is the index from which you want to remove and '1' is the number of elements you want to remove.
+    wlArr.push(current.assigned_to.toString());
+    ritm.watch_list = wlArr.join();
+    ritm.update();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
