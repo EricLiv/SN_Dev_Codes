@@ -17,3 +17,69 @@ Table = incident, Advanced = checked, When = before, Update = checked, Filter Co
     }
 
 })(current, previous);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Capture RITM Variable Changes in the Activity Log
+
+create a before BR on the Options table <sc_item_options>
+
+this should ONLY run on an update with a condition of Value changes
+
+
+check the advanced check box and put in the following script...
+
+ if (previous.value != current.value){
+
+            var var_owner = new GlideRecord('sc_item_option_mtom');
+
+            var_owner.addQuery('sc_item_option',current.sys_id);
+
+            var_owner.query();
+
+            if (var_owner.next()){
+
+                    var itm = new GlideRecord('sc_req_item');
+
+                    itm.addQuery('sys_id', var_owner.request_item);
+
+                    itm.query();
+
+                    if (itm.next()){
+
+                          itm.comments = 'Variable updated ' +   current.item_option_new.getDisplayValue() + ' value changed from ' + getValues(previous.value,current.item_option_new) + ' to ' + getValues(current.value,current.item_option_new) + ' By ' + gs.getUserName();
+
+//itm.description = 'test';
+
+                          itm.update();
+
+                  }          
+
+            }
+
+    }
+
+function getValues(q_value,q_sid){
+
+    var answer = '';
+
+    qc = new GlideRecord('question_choice');
+
+    qc.addQuery('question',q_sid);
+
+    qc.addQuery('value',q_value);
+
+    qc.query();
+
+    if (qc.next()){
+
+            answer = qc.text.toString();
+
+            return answer;
+
+  }
+
+  else{return q_value;}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
