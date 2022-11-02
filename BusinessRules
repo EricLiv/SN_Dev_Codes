@@ -48,7 +48,7 @@ check the advanced check box and put in the following script...
 
                           itm.comments = 'Variable updated: ' + '"' +  current.item_option_new.getDisplayValue() + '"' + '<br/><br/>' + 
                           ' Value changed FROM: ' + getValues(previous.value,current.item_option_new) + '<br/><br/>' + ' TO: ' + 
-                          getValues(current.value,current.item_option_new) + '<br/><br/>' + ' By ' + gs.getUserName();
+                          getValues(current.value,current.item_option_new) + '<br/><br/>' + ' By ' + gs.getUserDisplayName();
 
 //itm.description = 'test';
 
