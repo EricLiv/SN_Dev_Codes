@@ -46,7 +46,9 @@ check the advanced check box and put in the following script...
 
                     if (itm.next()){
 
-                          itm.comments = 'Variable updated ' +   current.item_option_new.getDisplayValue() + ' value changed from ' + getValues(previous.value,current.item_option_new) + ' to ' + getValues(current.value,current.item_option_new) + ' By ' + gs.getUserName();
+                          itm.comments = 'Variable updated: ' + '"' +  current.item_option_new.getDisplayValue() + '"' + '<br/><br/>' + 
+                          ' Value changed FROM: ' + getValues(previous.value,current.item_option_new) + '<br/><br/>' + ' TO: ' + 
+                          getValues(current.value,current.item_option_new) + '<br/><br/>' + ' By ' + gs.getUserName();
 
 //itm.description = 'test';
 
