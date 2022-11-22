@@ -19,7 +19,7 @@ Table = incident, Advanced = checked, When = before, Update = checked, Filter Co
 })(current, previous);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Capture RITM Variable Changes in the Activity Log
+// Capture RITM Variable Changes in the Activity Log as 'Work Notes' 
 
 create a before BR on the Options table <sc_item_options>
 
@@ -46,7 +46,7 @@ check the advanced check box and put in the following script...
 
                     if (itm.next()){
 
-                          itm.comments = 'Variable updated: ' + '"' +  current.item_option_new.getDisplayValue() + '"' + '<br/><br/>' + 
+                          itm.work_notes = 'Variable updated: ' + '"' +  current.item_option_new.getDisplayValue() + '"' + '<br/><br/>' + 
                           ' Value changed FROM: ' + getValues(previous.value,current.item_option_new) + '<br/><br/>' + ' TO: ' + 
                           getValues(current.value,current.item_option_new) + '<br/><br/>' + ' By ' + gs.getUserDisplayName();
 
