@@ -1,2 +1,8 @@
 //set a default value for a gdt variable
 javascript: var gdt = new GlideDateTime(); gdt.addDays(*** ADD # OF DAYS HERE!! ***);gdt.getDate();
+
+//set a default value for the name variable on a form to the name of the creator
+javascript: gs.getUserDisplayName();
+
+//set a default value for the date variable on a form to the date of creation
+javascript:gs.nowDateTime();
