@@ -1,4 +1,4 @@
-//Create an expanding Info Message that appears on top of your record producer
+//Create an expanding Info Message with working coded elements that appear on top of your record producer
 //onLoad Catalog Client Script (will work on any client script)
 
 var message = '';
@@ -9,7 +9,7 @@ message += '<p><a href="#" onclick="javascript: jQuery(this.parentNode).next().t
 message += '<div style="display: none;">';
 message += '<ul style="list-style: none">';
 message += '<li>This is the expanded info in the message.</li>';
-message += '<li>You can include any details you like here, including info retreived from a script like the sys_id of the current record: ' + g_form.getUniqueValue() + '</li>';
+message += '<li>You can include any details you like here, including info retrieved from a script like the sys_id of the current record: ' + g_form.getUniqueValue() + '</li>';
 message += '</ul>';
 message += '<p>You can even run a script when an element is clicked <a href="#" onclick="javascript: alert(\'See? ^_^\');">like this</a>. You just have to escape your code in the HTML.</p>';
 message += '</div>';
