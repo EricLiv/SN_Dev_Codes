@@ -1,0 +1,15 @@
+// Create a UI Policy to hide or display a form section depending on true or false
+
+//EXECUTE IF TRUE
+
+function onCondition() {
+  g_form.setSectionDisplay('section-name', true);
+}
+
+//EXECUTE IF FALSE
+
+function onCondition() {
+  g_form.setSectionDisplay('section-name', false);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
