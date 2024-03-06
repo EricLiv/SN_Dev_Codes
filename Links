@@ -1,5 +1,10 @@
 Links to resources
 
+Link User Stories to Update Sets (untested):
+https://www.servicenow.com/community/developer-articles/linking-update-set-to-agile-story/ta-p/2322425
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Capture Variable Changes in Activities:
 https://servicenowscholar.com/2019/07/30/add-activity-log-to-a-form/#:~:text=First%2C%20navigate%20to%20System%20UI,the%20Activities%20(filtered)%20record.
 
@@ -22,7 +27,7 @@ https://servicenowguru.com/scripting/client-scripts-scripting/gform-getreference
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-Unable to assign user to caller field: 
+Unable to assign a user to caller field: 
 https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0760508
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
